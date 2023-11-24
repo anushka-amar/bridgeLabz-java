@@ -17,14 +17,21 @@ public class SnakeAndLadder {
                 break;
             case 1:
                 System.out.println("yay, you got on a ladder");
-                currPos += diceVal;
+                if(currPos+diceVal>100){
+                    currPos += 0;
+                }else {
+                    currPos += diceVal;
+                }
                 break;
             case 2:
                 System.out.println("You got bitten by a snake");
                 if(currPos-diceVal<0){
                     currPos = 0;
                 }else {currPos -= diceVal;}
-
+                break;
+            default:
+                System.out.println("Invalid");
+                break;
         }
         return currPos;
     }
@@ -39,8 +46,11 @@ public class SnakeAndLadder {
 
             int diceVal = dice.rollDice();
             int currPos = checkOptn(player1, diceVal);
+            player1.setCurrPos(currPos);
             System.out.println("Your current position is: "+currPos);
         }
+
+        System.out.println("You have won the game!");
 
 
     }
