@@ -2,7 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.Day3.iml
+Day3.iml
 .idea/
 
 ### Eclipse ###
